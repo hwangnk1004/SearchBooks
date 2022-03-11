@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Search</string>
+
+    <string name="detail_title">Title.</string>
+    <string name="detail_subtitle">SubTitle.</string>
+    <string name="detail_authors">Authors.</string>
+    <string name="detail_publisher">Publisher.</string>
+    <string name="detail_language">Language.</string>
+    <string name="detail_isbn10">Isbn10.</string>
+    <string name="detail_isbn13">Isbn13.</string>
+    <string name="detail_pages">Pages.</string>
+    <string name="detail_years">Years.</string>
+    <string name="detail_rating">Rating.</string>
+    <string name="detail_price">Price.</string>
+    <string name="detail_description">Description.</string>
+
 </resources>

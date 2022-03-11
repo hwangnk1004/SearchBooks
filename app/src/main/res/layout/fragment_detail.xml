@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="detail_fragment"
+            type="com.example.search.view.DetailFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context=".view.DetailFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/book_detail_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_title"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_title"
+                    tools:text="book_title" />
+
+                <View
+                    android:id="@+id/book_detail_title_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_title" />
+
+                <TextView
+                    android:id="@+id/book_detail_sub_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_subtitle"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_title_view"
+                    />
+
+                <TextView
+                    android:id="@+id/book_detail_input_sub_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_sub_title"
+                    tools:text="book_sub_title" />
+
+                <View
+                    android:id="@+id/book_detail_sub_title_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_sub_title" />
+
+                <ImageView
+                    android:id="@+id/book_detail_image"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_sub_title_view"
+                    tools:background="@color/title_color" />
+
+                <TextView
+                    android:id="@+id/book_detail_authors"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_authors"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_image" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_authors"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_authors"
+                    tools:text="authors" />
+
+                <View
+                    android:id="@+id/book_detail_authors_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_authors"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_authors" />
+
+                <TextView
+                    android:id="@+id/book_detail_publisher"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_publisher"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_authors_view" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_publisher"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_publisher"
+                    tools:text="publisher" />
+
+                <View
+                    android:id="@+id/book_detail_publisher_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_publisher"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_publisher" />
+
+                <TextView
+                    android:id="@+id/book_detail_language"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_language"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_publisher_view" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_language"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_language"
+                    tools:text="language" />
+
+                <View
+                    android:id="@+id/book_detail_language_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_publisher"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_language" />
+
+                <TextView
+                    android:id="@+id/book_detail_isbn10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_isbn10"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_language_view" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_isbn10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_isbn10"
+                    tools:text="isbn10" />
+
+                <View
+                    android:id="@+id/book_detail_isbn10_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_publisher"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_isbn10" />
+
+                <TextView
+                    android:id="@+id/book_detail_isbn13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_isbn13"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_isbn10_view" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_isbn13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_isbn13"
+                    tools:text="isbn13" />
+
+                <View
+                    android:id="@+id/book_detail_isbn13_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_publisher"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_isbn13" />
+
+                <TextView
+                    android:id="@+id/book_detail_pages"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_pages"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_isbn13_view" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_pages"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_pages"
+                    tools:text="pages" />
+
+                <View
+                    android:id="@+id/book_detail_pages_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_publisher"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_pages" />
+
+                <TextView
+                    android:id="@+id/book_detail_years"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_years"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_pages_view" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_years"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_years"
+                    tools:text="years" />
+
+                <View
+                    android:id="@+id/book_detail_years_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_publisher"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_years" />
+
+                <TextView
+                    android:id="@+id/book_detail_rating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_rating"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_years_view" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_rating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_rating"
+                    tools:text="rating" />
+
+                <View
+                    android:id="@+id/book_detail_rating_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_publisher"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_rating" />
+
+                <TextView
+                    android:id="@+id/book_detail_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_price"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_rating_view" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_price"
+                    tools:text="price" />
+
+                <View
+                    android:id="@+id/book_detail_price_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/title_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_input_publisher"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_input_price" />
+
+                <TextView
+                    android:id="@+id/book_detail_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/detail_description"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_price_view" />
+
+                <TextView
+                    android:id="@+id/book_detail_input_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/book_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/book_detail_description"
+                    tools:text="description" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
