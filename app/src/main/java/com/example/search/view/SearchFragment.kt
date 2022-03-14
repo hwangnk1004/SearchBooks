@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.search.adapter.BooksAdapter
 import com.example.search.databinding.FragmentSearchBinding
 import com.example.search.model.BookUiModel
@@ -47,8 +48,18 @@ class SearchFragment : Fragment(), View.OnClickListener {
 
     private fun initRecyclerView() {
         binding.searchRecyclerView.apply {
-            adapter = searchRecyclerViewAdapter
             layoutManager = LinearLayoutManager(context)
+            adapter = searchRecyclerViewAdapter
+            addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+                    if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                        if (recyclerView.canScrollVertically(1).not()) {
+                            moreFetchSearchBooks()
+                        }
+                    }
+                }
+            })
         }
     }
 
@@ -82,10 +93,20 @@ class SearchFragment : Fragment(), View.OnClickListener {
     }
 
     private fun fetchSearchBooks() {
-        val searchKeyword = binding.searchEditText.text.toString()
-        if (searchKeyword.isBlank()) return
+        if (!verifySearchText().first) return
+        searchViewModel.fetchSearchBooks(verifySearchText().second!!)
+    }
 
-        searchViewModel.fetchSearchBooks(searchKeyword)
+    private fun moreFetchSearchBooks() {
+        if (!verifySearchText().first) return
+        searchViewModel.moreFetchSearchBooks(verifySearchText().second!!)
+    }
+
+    private fun verifySearchText(): Pair<Boolean, String?> {
+        val searchKeyword = binding.searchEditText.text.toString()
+        if (searchKeyword.isBlank()) return Pair(false, null)
+
+        return Pair(true, searchKeyword)
     }
 
     private fun moveDetailFragment(bookUiModel: BookUiModel) {

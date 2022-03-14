@@ -17,8 +17,7 @@ import com.facebook.shimmer.ShimmerDrawable
 
 class BooksAdapter(
     private val onClick: (BookUiModel) -> Unit
-) :
-    ListAdapter<BookUiModel, BooksAdapter.BookViewHolder>(diffUtil) {
+) : ListAdapter<BookUiModel, BooksAdapter.BookViewHolder>(diffUtil) {
 
     init {
         setHasStableIds(true)
@@ -41,14 +40,14 @@ class BooksAdapter(
         @SuppressLint("SetTextI18n")
         fun onBind(item: BookUiModel, onClick: (BookUiModel) -> Unit) {
             binding.apply {
-                bookTitle.text = item.title
-                bookSub.text = item.subTitle
-                bookPrice.text = item.price
-                bookIsbn13.text = item.isbn13
                 Glide.with(itemView.context)
                     .load(item.image)
                     .placeholder(makeShimmerDrawable())
                     .into(bookImage)
+                bookTitle.text = item.title
+                bookSub.text = item.subTitle
+                bookPrice.text = item.price
+                bookIsbn13.text = item.isbn13
                 root.setOnClickListener { onClick(item) }
             }
         }

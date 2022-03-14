@@ -26,6 +26,7 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val isbn13 = arguments?.getString("isbn13") ?: ""
         detailViewModel.fetchDetailBook(isbn13)
         initViewModel()
@@ -44,11 +45,11 @@ class DetailFragment : Fragment() {
 
     private fun initUi(data: DetailBookUiModel) {
         binding.apply {
-            bookDetailInputTitle.text = data.title
-            bookDetailInputSubTitle.text = data.subtitle
             Glide.with(requireContext())
                 .load(data.image)
                 .into(bookDetailImage)
+            bookDetailInputTitle.text = data.title
+            bookDetailInputSubTitle.text = data.subtitle
             bookDetailInputAuthors.text = data.authors
             bookDetailInputPublisher.text = data.publisher
             bookDetailInputLanguage.text = data.language

@@ -27,8 +27,8 @@ class RemoteBookDataSource : BookDataSource {
 
     private var bookApi: BookApiService = retrofit.create(BookApiService::class.java)
 
-    override suspend fun fetchSearchBooks(nextPage: Int): SearchResponseData? {
-        return runCatching { bookApi.fetchSearchBooks("test", nextPage).await() }.getOrNull()
+    override suspend fun fetchSearchBooks(query: String, page: Int): SearchResponseData? {
+        return runCatching { bookApi.fetchSearchBooks(query, page).await() }.getOrNull()
     }
 
     override suspend fun fetchDetailBook(isbn13: String): DetailBook? {

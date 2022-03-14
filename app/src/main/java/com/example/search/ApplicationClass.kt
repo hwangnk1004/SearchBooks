@@ -10,10 +10,6 @@ class ApplicationClass : Application() {
         context = base
     }
 
-    override fun onCreate() {
-        super.onCreate()
-    }
-
     companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
