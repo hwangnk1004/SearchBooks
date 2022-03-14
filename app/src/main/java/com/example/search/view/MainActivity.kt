@@ -13,6 +13,13 @@ class MainActivity : AppCompatActivity() {
         addFragment(SearchFragment(), "search")
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if (supportFragmentManager.backStackEntryCount == 0) {
+            finish()
+        }
+    }
+
     fun addFragment(fragment: Fragment, tag: String) {
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container_view, fragment)
